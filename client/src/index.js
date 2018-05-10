@@ -21,6 +21,3 @@ const jsx = (
 );
 
 ReactDOM.render(jsx, anchor);
-
-console.log(process.env.REACT_APP_STRIPE_PUBLISHABLE);
-console.log(process.env.NODE_ENV);
