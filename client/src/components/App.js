@@ -1,9 +1,14 @@
 import React from 'react';
 import {BrowserRouter, Route} from 'react-router-dom';
 import {connect} from 'react-redux';
+
+import * as actions from '../actions';
+
 import Header from './Header';
 import Landing from './Landing';
-import * as actions from '../actions';
+import Dashboard from './Dashboard';
+import SurveyNew from './surveys/SurveyNew';
+
 
 export class App extends React.Component{ 
 
@@ -14,16 +19,14 @@ export class App extends React.Component{
 
     render(){
         return(
-            <div className="container">
-                <BrowserRouter>
-                    <div>
-                        <Header />
-                         <Route path="/" exact component={Landing} />
-                        {/*<Route path="/surveys" exact component={} />
-                        <Route path="/surveys/new" exact component={} /> */}
-                    </div>
-                </BrowserRouter>
-            </div>
+            <BrowserRouter>
+                <div className='container'>
+                    <Header />
+                        <Route path="/" exact component={Landing} />
+                    <Route path="/surveys" exact component={Dashboard} />
+                    <Route path="/surveys/new" exact component={SurveyNew} />
+                </div>
+            </BrowserRouter>
         );
     }
 };
